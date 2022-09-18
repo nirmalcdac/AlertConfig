@@ -1,0 +1,42 @@
+alertConfigList:
+[
+	{
+		client: X
+		eventType: PAYMENT_EXCEPTION,
+		alertConfig {
+			type: MOVING_WINDOW,
+			count: 10
+			windowSizeInSecs: 10
+		}
+		"dispatchStrategy": {
+			"type": CONSOLE,
+			"message" : "issue in payment"
+		}
+	},
+	{
+		client: X
+		eventType: DB_EXCEPTION,
+		alertConfig {
+			type: SIMPLE_COUNT,
+			count: 10
+			windowSizeInSecs: 10
+		}
+		"dispatchStrategy": {
+			"type": CONSOLE,
+			"message" : "issue in payment"
+		}
+	},
+	{
+		client: X
+		eventType: I/O_EXCEPTION,
+		alertConfig {
+			type: BUCKETED_WINDOW,
+			count: 10
+			windowSizeInSecs: 10
+		}
+		"dispatchStrategy": {
+			"type": CONSOLE,
+			"message" : "issue in payment"
+		}
+	}
+]
